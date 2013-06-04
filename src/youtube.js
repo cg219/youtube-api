@@ -30,6 +30,12 @@ if (typeof Object.create !== 'function') {
 		},
 		apis: {
 			authorize		: "https://accounts.google.com/o/oauth2/auth"
+		},
+		authorize: function(){
+			var url = this.apis.authorize + "?client_id=" + this.settings.clientID + "&redirect_uri=" + this.settings.redirectURI + "&scope="
+			+ this.settings.scope + "&response_type=token";
+
+			window.location = url;
 		}
 	})
 
